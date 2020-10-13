@@ -8,8 +8,8 @@ csrf = CSRFProtect()
 
 class JournalEntryForm(Form):
     title = StringField("Title", validators=[DataRequired()])
-    date = DateField("Date (DD/MM/YYYY)",
-                     format='%d/%m/%Y',
+    date = DateField("Date (MM/DD/YYYY)",
+                     format='%m/%d/%Y',
                      validators=[DataRequired()])
     timespent = IntegerField("Time Spent")
     content = TextAreaField("What I Learned", validators=[DataRequired()])

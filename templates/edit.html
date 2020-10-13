@@ -15,7 +15,7 @@
             {% if field.name == 'title' %}
                 {{ field(value=post.title)}}
             {% elif field.name == 'date' %}
-                {{ field(value=post.date.date().strftime("%d/%m/%Y")) }}
+                {{ field(value=post.date.date().strftime("%m/%d/%Y")) }}
             {% elif field.name == 'timespent' %}
                 {{ field(value=post.timespent) }}
             {% elif field.name == 'content' %}

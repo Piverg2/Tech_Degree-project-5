@@ -31,6 +31,7 @@ header .button {
 	margin: 33px 0 0 0;
 }
 footer {
+	margin-top:10px;
 	text-align: center;
 	padding: 35px 0;
 	border-top: 5px dotted #ff6200;
