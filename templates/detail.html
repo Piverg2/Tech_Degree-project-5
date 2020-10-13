@@ -1,0 +1,31 @@
+  
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="entry-list single">
+    <article>
+        <h1>{{ post.title }}</h1>
+        <time datetime="{{ post.timestamp }}">{{ post.date.date().strftime("%B %d, %Y") }}</time>
+        <div class="entry">
+            <h3>Time Spent: </h3>
+            <p>{{ post.timespent }} min</p>
+        </div>
+        <div class="entry">
+            <h3>What I Learned:</h3>
+            <p>{{ post.post }}</p>
+        </div>
+        <div class="entry">
+            {% if post.resources != '' %}
+                <h3>Resources to Remember:</h3>
+                <p>{{ post.resources }}</p>
+            {% endif %}
+        </div>
+    </article>
+</div>
+</div>
+<div class="edit">
+<p><a href="{{ url_for('edit', id=post.entry_id) }}">Edit Entry</a> || <a href="{{ url_for('delete', id=post.entry_id) }}" onclick="return confirm('Are you sure to delete this entry?')">Delete Entry</a></p>
+</div>
+
+{% endblock %}
