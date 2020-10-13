@@ -11,6 +11,7 @@ app = Flask(__name__)
 app.secret_key = 'azwsxrdfctvghybujnikmol[rdfoijonhlkmwe;'
 forms.csrf.init_app(app)
 
+
 @app.before_request
 def before_request():
     """Connect to the database before each request."""
@@ -23,7 +24,8 @@ def after_request(response):
     """Close the database connection after each request."""
     g.db.close()
     return response
-    
+
+
 @app.route("/")
 def index():
     stream = models.Entry.select().limit(4)
@@ -47,7 +49,7 @@ def create():
                             resources=form.resources.data.strip())
         flash("Message posted! Thanks!", "success")
         return redirect(url_for('index'))
-    else: 
+    else:
         return render_template('new.html', form=form)
 
 

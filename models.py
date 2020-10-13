@@ -7,7 +7,7 @@ DATABASE = SqliteDatabase('journal.db')
 
 class Entry(Model):
     entry_id = IntegerField(primary_key=True, unique=True)
-    title = CharField(max_length = 255, default="Untitled")
+    title = CharField(max_length=255, default="Untitled")
     date = DateTimeField(default=datetime.datetime.now)
     timespent = IntegerField()
     post = TextField()
