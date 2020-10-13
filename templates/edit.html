@@ -1,4 +1,4 @@
-
+<!-- resource for loading text area fields https://stackoverflow.com/questions/5117479/wtforms-how-to-prepopulate-a-textarea-field-->
 {% extends "layout.html" %}
 {% block content %}
 <div class="edit-entry">
@@ -20,7 +20,7 @@
                 {{ field(value=post.timespent) }}
             {% elif field.name == 'content' %}
                 {% set f = field.process_data(post.post) %} 
-                {{ field(value=post.content) }}
+                {{ field(value=post.post) }}
             {% elif field.name == 'resources' %}
             {% set f = field.process_data(post.resources) %}
                 {{ field(value=post.resources) }}

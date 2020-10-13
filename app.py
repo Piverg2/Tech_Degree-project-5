@@ -1,5 +1,4 @@
 from flask import (Flask, render_template, redirect, url_for, g, flash)
-
 import models
 import forms
 
@@ -70,7 +69,7 @@ def edit(id):
         post.title = form.title.data
         post.date = form.date.data
         post.timespent = form.timespent.data
-        post.content = form.content.data.strip()
+        post.post = form.content.data.strip()
         post.resources = form.resources.data.strip()
         post.save()
         return redirect(url_for('index'))
