@@ -1,6 +1,5 @@
 
 {% extends "layout.html" %}
-{% from 'macros.html' import render_field %}
 {% block content %}
 <div class="edit-entry">
     <h2>Edit Entry</h2>
@@ -20,8 +19,10 @@
             {% elif field.name == 'timespent' %}
                 {{ field(value=post.timespent) }}
             {% elif field.name == 'content' %}
-                {{ field(value=post.post) }}
+                {% set f = field.process_data(post.post) %} 
+                {{ field(value=post.content) }}
             {% elif field.name == 'resources' %}
+            {% set f = field.process_data(post.resources) %}
                 {{ field(value=post.resources) }}
             {% endif %}
            
