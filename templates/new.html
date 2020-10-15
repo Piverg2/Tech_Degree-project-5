@@ -10,6 +10,7 @@
         {% for field in form %}
             {{ field.label() }}
             {{ render_field(field) }}
+            
         {% endfor %}
         <button type="submit" id="submit" class="button">Post!</button>
         <a href="{{ url_for('index') }}" class="button">Cancel</a>

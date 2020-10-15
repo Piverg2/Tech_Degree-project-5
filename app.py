@@ -28,13 +28,13 @@ def after_request(response):
 
 @app.route("/")
 def index():
-    stream = models.Entry.select().limit(4)
+    stream = models.Entry.select().order_by(models.Entry.date.desc())
     return render_template("index.html", stream=stream)
 
 
 @app.route("/entries")
 def entries():
-    stream = models.Entry.select().limit(4)
+    stream = models.Entry.select().order_by(models.Entry.date.desc())
     return render_template("index.html", stream=stream)
 
 

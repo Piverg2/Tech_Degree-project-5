@@ -15,7 +15,6 @@ class Entry(Model):
 
     class Meta:
         database = DATABASE
-        order_by = ('-timestamp')
 
     @classmethod
     def create_entry(cls, title, post):

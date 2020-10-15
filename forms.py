@@ -6,7 +6,6 @@ from wtforms.validators import DataRequired
 csrf = CSRFProtect()
 
 
-
 class JournalEntryForm(Form):
     title = StringField("Title", validators=[DataRequired()])
     date = DateField("Date (MM/DD/YYYY)",
